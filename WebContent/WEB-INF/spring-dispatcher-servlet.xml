@@ -1,5 +1,4 @@
-<!-- this is Front controller according to diagream in notes , Things will come here only when url match in web.xml-->
-<!-- this is ANNOTATION METHOD -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,17 +12,17 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
   
  
- <context:component-scan base-package="hellocontroller" /> <!-- it will load all the controller classes in memory  -->
- <mvc:annotation-driven/><!-- i have used this because i have used path variable in java file. -->
+ <context:component-scan base-package="hellocontroller" />
+ <mvc:annotation-driven/>
  
   <bean id="viewResolver"
-    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" ><!-- it will tell the front controller by using  VIEW resolver about exact location/address of the VIEW file in project.  --><!-- hence with the help of this frontontroller will go to View.jsp file -->
+    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">    
             <value>/WEB-INF/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>
-        </property>                  <!-- so the path will be /WEB-INF/View.jsp of the view where front controller will send the output.  -->
+        </property>                 
  </bean>
  
 
