@@ -32,8 +32,7 @@ public class StudentAdmissionController
 	public ModelAndView submitAdmissionForm(@ModelAttribute("student1") Student student) 
 	{
 		
-		//@modelattribute use karna hi better hai varna code galat hi lenghty ho jayega.THE OTHER METHOD I HAVE USED IN " 3- Demo With getting  basic values" folder
-        // as sepertely map nahi karna padega each object ko value mei. plus also you have to care about string type or int type.
+		
 		
 		ModelAndView model1 = new ModelAndView("AdmissionSuccess");
 		return model1;
@@ -65,7 +64,7 @@ public class StudentAdmissionController
 				studentsList.add(student2);
 				studentsList.add(student3);
 				
-				return studentsList; // so response body will return all the values in studentsList object.
+				return studentsList; 
 		}
     
     //***************************Getting a single student record******************************
@@ -85,7 +84,7 @@ public class StudentAdmissionController
   //***************************Updating a single student record******************************
     @ResponseBody
     @RequestMapping(value="/students/{name}", method = RequestMethod.PUT)
-	public boolean updateStudent(@PathVariable("name") String studentName, @RequestBody Student student)// here request body ka kaam hai jis bhi data format  mei manga hai data usko java object mei bana kar return kardo, if asked in json then it will convert json data in JAVA object.
+	public boolean updateStudent(@PathVariable("name") String studentName, @RequestBody Student student)
 	{ 
     	System.out.println(" Student Name : "+studentName);
     	System.out.println(" Student Name : "+student.getStudentName()+"Student Hobby : "+student.getStudentHobby());
